@@ -9,7 +9,8 @@ function App() {
   const { cartItems, isLoading } = useSelector((store) => store.cart);
   const { isOpen } = useSelector((store) => store.modal);
   const dispatch = useDispatch();
-
+  
+  // constantly updating the total 
   useEffect(() => {
     dispatch(calculateTotals());
   }, [cartItems]);
